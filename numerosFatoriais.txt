@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int fatorial(int numero_do_usuario) {
+    int fatorial_Total = 1;
+    if (numero_do_usuario == 0 || numero_do_usuario == 1) {
+        return 1;
+    } else {
+        for (int i = 1; i <= numero_do_usuario; i++) {
+            fatorial_Total *= i;
+        }
+    }
+    return fatorial_Total;
+}
+
+int main() {
+    int numero_do_usuario;
+    int fatorial_Total = 0;
+    int Menu;
+    int loop_Do_Progama;
+    int loop_Do_Menu;
+    
+    printf("\aBem-vindo ao sistema de cálculo de fatorial!\n\n");
+    
+    do {
+        printf("Digite um número para calcular o fatorial: ");
+        scanf("%d", &numero_do_usuario);
+        
+        fatorial_Total = fatorial(numero_do_usuario);       
+        printf("O valor fatorial de %d! é: %d\n\n\n", numero_do_usuario, fatorial_Total);
+        
+        do {
+            printf("*               MENU                             *\n");
+            printf("*       1 - Calcular o fatorial de outro número  *\n");
+            printf("*       2 - Encerrar o programa                  *\n");
+            printf("Digite uma das opções: ");
+            scanf("%d", &Menu);
+            
+            if (Menu == 1) {
+                printf("\n\nInforme-me o próximo número...\n");
+                loop_Do_Menu = 0;
+                loop_Do_Progama = 1;
+            } else if (Menu == 2) {
+                loop_Do_Progama = 0;
+                loop_Do_Menu = 0;
+                printf("\n\nPrograma encerrado. Obrigado!\n");
+            } else {
+                printf("\n\n======= ERRO =======\n");
+                printf("Opção inválida. Tente novamente...\n\n\n");
+                loop_Do_Menu = 1;
+            }
+        } while (loop_Do_Menu);
+        
+    } while (loop_Do_Progama);
+
+    return 0;
+}
