@@ -25,7 +25,8 @@ int main() {
         printf("Digite um número para calcular o fatorial: ");
         scanf("%d", &numero_do_usuario);
         
-        fatorial_Total = fatorial(numero_do_usuario);       
+        fatorial_Total = fatorial(numero_do_usuario);
+       
         printf("O valor fatorial de %d! é: %d\n\n\n", numero_do_usuario, fatorial_Total);
         
         do {
